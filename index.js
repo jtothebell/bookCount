@@ -1,7 +1,5 @@
 var currentCount = 0;
 var timeoutId;
-var timeoutTime = 30000;
-var countEndpoint = "dummyServer.php";
 
 function getCurrentCount() {
     var xhr = new XMLHttpRequest();
@@ -12,7 +10,7 @@ function getCurrentCount() {
             }
         }
     }
-    xhr.open("GET", countEndpoint);
+    xhr.open("GET", config.countEndpointUrl);
     xhr.send();
 }
 
@@ -49,7 +47,7 @@ function getNumberOfThousands(number) {
 function setup() {
     getCurrentCount();
 
-    timeoutId = setInterval(getCurrentCount, timeoutTime);
+    timeoutId = setInterval(getCurrentCount, config.intervalTime);
 }
 
 window.onload = setup;
