@@ -1,38 +1,38 @@
-var currentBookCount = 0;
+var currentCount = 0;
 var timeoutId;
 var timeoutTime = 30000;
-var bookCountEndpoint = "dummyServer.php";
+var countEndpoint = "dummyServer.php";
 
 function getCurrentCount() {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == XMLHttpRequest.DONE) {
             if (xhr.status == 200) {
-                setCurrentBookCount(xhr.responseText);
+                setCurrentCount(xhr.responseText);
             }
         }
     }
-    xhr.open("GET", bookCountEndpoint);
+    xhr.open("GET", countEndpoint);
     xhr.send();
 }
 
-function setCurrentBookCount(bookCount){
-    var bookCountInt = parseInt(bookCount);
-    var oldBookCount = currentBookCount;
+function setCurrentCount(count){
+    var countInt = parseInt(count);
+    var oldCount = currentCount;
 
-    currentBookCount = bookCountInt;
-    document.getElementById("count").textContent = bookCount;
+    currentCount = countInt;
+    document.getElementById("count").textContent = count;
 
-    var oldThousand = getNumberOfThousands(oldBookCount);
-    var newThousand = getNumberOfThousands(bookCountInt);
+    var oldThousand = getNumberOfThousands(oldCount);
+    var newThousand = getNumberOfThousands(countInt);
     if (newThousand > oldThousand) {
         playVideo(newThousand);
     }
 }
 
-//assume bookCount is rounded to nearest thousand here
-function playVideo(bookCount) {
-    var song = getSongForBookCount(bookCount);
+//assume count is rounded to nearest thousand here
+function playVideo(count) {
+    var song = getSongForCount(count);
     if (song != null) {
         var url = song.Youtube + "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1";
         if (song.StartTime && song.StartTime != 0) {

@@ -1,6 +1,6 @@
 var songs = [
 	{
-		"bookCount": 3000,
+		"count": 3000,
 		"Name": "True Survivor",
 		"Artist": "David Hasselhoff",
 		"Youtube": "https://www.youtube.com/embed/ZTidn2dBYbY",
@@ -8,7 +8,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 4000,
+		"count": 4000,
 		"Name": "Welcome To the Jungle",
 		"Artist": "Guns N Roses",
 		"Youtube": "https://www.youtube.com/embed/o1tj2zJ2Wvg",
@@ -16,7 +16,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 5000,
+		"count": 5000,
 		"Name": "Born to Run",
 		"Artist": "Bruce Springsteen",
 		"Youtube": "https://www.youtube.com/embed/IxuThNgl3YA",
@@ -24,7 +24,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 6000,
+		"count": 6000,
 		"Name": "Thunderstruck",
 		"Artist": "AC/DC",
 		"Youtube": "https://www.youtube.com/embed/v2AC41dglnM",
@@ -32,7 +32,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 7000,
+		"count": 7000,
 		"Name": "Roar",
 		"Artist": "Katie Perry",
 		"Youtube": "https://www.youtube.com/embed/CevxZvSJLk8",
@@ -40,7 +40,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 8000,
+		"count": 8000,
 		"Name": "Bohemian Rhapsody",
 		"Artist": "Queen",
 		"Youtube": "https://www.youtube.com/embed/fJ9rUzIMcZQ",
@@ -48,7 +48,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 9000,
+		"count": 9000,
 		"Name": "Burning Heart",
 		"Artist": "Survivor",
 		"Youtube": "https://www.youtube.com/embed/Kc71KZG87X4",
@@ -56,7 +56,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 10000,
+		"count": 10000,
 		"Name": "Chatty Anthem",
 		"Artist": "Laken Quigley",
 		"Youtube": "https://www.youtube.com/embed/UDUzql95wrU",
@@ -64,7 +64,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 11000,
+		"count": 11000,
 		"Name": "Kissed By A Rose",
 		"Artist": "Seal",
 		"Youtube": "https://www.youtube.com/embed/CWi4Wam_7nI",
@@ -72,7 +72,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 12000,
+		"count": 12000,
 		"Name": "Kickstart My Heart",
 		"Artist": "Motley Crue",
 		"Youtube": "https://www.youtube.com/embed/CmXWkMlKFkI",
@@ -80,7 +80,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 13000,
+		"count": 13000,
 		"Name": "Intergalactic",
 		"Artist": "Beastie Boys",
 		"Youtube": "https://www.youtube.com/embed/6TgTXYFHlfk",
@@ -88,7 +88,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 14000,
+		"count": 14000,
 		"Name": "The Distance",
 		"Artist": "Cake",
 		"Youtube": "https://www.youtube.com/embed/F_HoMkkRHv8",
@@ -96,7 +96,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 15000,
+		"count": 15000,
 		"Name": "Jump",
 		"Artist": "Van Halen",
 		"Youtube": "https://www.youtube.com/embed/X9RMdcFQAw",
@@ -104,7 +104,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 16000,
+		"count": 16000,
 		"Name": "Turbulence",
 		"Artist": "Steve Aoki & Laidback Luke ft. Lil Jon",
 		"Youtube": "https://www.youtube.com/embed/y3OzHBEcymw",
@@ -112,7 +112,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 17000,
+		"count": 17000,
 		"Name": "I Won't Back Down",
 		"Artist": "Tom Petty and the Heartbreakers",
 		"Youtube": "https://www.youtube.com/embed/nvlTJrNJ5lA",
@@ -120,7 +120,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 18000,
+		"count": 18000,
 		"Name": "My Shot",
 		"Artist": "Lin Manuel Miranda",
 		"Youtube": "https://www.youtube.com/embed/VK4Wk_8PbcI",
@@ -128,7 +128,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 19000,
+		"count": 19000,
 		"Name": "Celebration",
 		"Artist": "Kool and the Gang",
 		"Youtube": "https://www.youtube.com/embed/3GwjfUFyY6M",
@@ -136,7 +136,7 @@ var songs = [
 		"RunTime": 0,
 	},
 	{
-		"bookCount": 20000,
+		"count": 20000,
 		"Name": "Never Gonna Give You Up",
 		"Artist": "Rick Astley",
 		"Youtube": "https://www.youtube.com/embed/dQw4w9WgXcQ",
@@ -146,10 +146,10 @@ var songs = [
 ];
 
 
-function getSongForBookCount(bookCount) {
+function getSongForCount(count) {
 	for (var i = 0; i < songs.length; i++) {
 		var currSong = songs[i];
-		if (currSong.bookCount === bookCount) {
+		if (currSong.count === count) {
 			return currSong;
 		}
 	}
