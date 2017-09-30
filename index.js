@@ -32,7 +32,7 @@ function setCurrentCount(count){
 function playVideo(count) {
     var song = getSongForCount(count);
     if (song != null) {
-        var url = song.Youtube + "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1";
+        var url = song.Youtube + "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;vq=tiny";
         if (song.StartTime && song.StartTime != 0) {
             url = url + "&amp;start=1";
         }
