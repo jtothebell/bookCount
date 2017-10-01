@@ -29,15 +29,34 @@ function setCurrentCount(count){
     }
 }
 
+//spotify: https://open.spotify.com/embed?uri=
 //assume count is rounded to nearest thousand here
 function playVideo(count) {
     var song = getSongForCount(count);
     if (song != null) {
-        var url = song.Youtube + "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;vq=tiny";
-        if (song.StartTime && song.StartTime != 0) {
-            url = url + "&amp;start=1";
+        if (song.mp3) {
+            var url = song.mp3;
+
+            document.getElementById("ytiframe").src = "";
+            document.getElementById("spotiframe").src = "";
+            document.getElementById("mp3Elem").src = url;
         }
-        var iframe = document.getElementById("ytiframe").src = url;
+        else if (song.Spotify) {
+            var url = song.Spotify;
+
+            document.getElementById("ytiframe").src = "";
+            document.getElementById("spotiframe").src = url;
+            document.getElementById("mp3Elem").src = "";
+        }
+        else if (song.Youtube) {
+            var url = song.Youtube + "?rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;vq=tiny";
+            if (song.StartTime && song.StartTime != 0) {
+                url = url + "&amp;start=1";
+            }
+            document.getElementById("ytiframe").src = url;
+            document.getElementById("spotiframe").src = "";
+            document.getElementById("mp3Elem").src = "";
+        }
     }
 }
 

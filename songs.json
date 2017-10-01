@@ -5,6 +5,8 @@
 			"Name": "True Survivor",
 			"Artist": "David Hasselhoff",
 			"Youtube": "https://www.youtube.com/embed/ZTidn2dBYbY",
+			"Spotify": "https://open.spotify.com/embed?uri=spotify:track:3fnUvzulzK4SZGl5o1hgqx",
+			"mp3": null,
 			"StartTime": 0,
 			"RunTime": 0
 		},
@@ -13,6 +15,8 @@
 			"Name": "Welcome To the Jungle",
 			"Artist": "Guns N Roses",
 			"Youtube": "https://www.youtube.com/embed/o1tj2zJ2Wvg",
+			"Spotify": null,
+			"mp3": "4k.mp3",
 			"StartTime": 0,
 			"RunTime": 0
 		},
