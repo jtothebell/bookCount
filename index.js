@@ -1,5 +1,6 @@
 var currentCount = 0;
 var timeoutId;
+var songs;
 
 function getCurrentCount() {
     var xhr = new XMLHttpRequest();
@@ -40,14 +41,41 @@ function playVideo(count) {
     }
 }
 
+function getSongForCount(count) {
+	for (var i = 0; i < songs.length; i++) {
+		var currSong = songs[i];
+		if (currSong.count === count) {
+			return currSong;
+		}
+	}
+	return null;
+}
+
 function getNumberOfThousands(number) {
     return Math.floor(number/1000)*1000;
 }
 
 function setup() {
-    getCurrentCount();
+    getSongsList();
+}
 
-    timeoutId = setInterval(getCurrentCount, config.intervalTime);
+function getSongsList() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status == 200) {
+                var resp = JSON.parse(xhr.response);
+                if (resp && resp.songs && resp.songs.length > 0) {
+                    songs = resp.songs;
+                    getCurrentCount();
+                    
+                    timeoutId = setInterval(getCurrentCount, config.intervalTime);
+                }
+            }
+        }
+    }
+    xhr.open("GET", config.songList);
+    xhr.send();
 }
 
 window.onload = setup;
